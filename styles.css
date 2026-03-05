@@ -1,0 +1,196 @@
+:root {
+    --bg-color: #f2f2f2;
+    /* Light gray background */
+    --text-primary: #333333;
+    --text-secondary: #888888;
+    --nav-bg: rgba(230, 230, 230, 0.6);
+    --nav-border: rgba(0, 0, 0, 0.05);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+/* Navigation */
+.navbar {
+    position: fixed;
+    top: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 800px;
+    height: 60px;
+    background: var(--nav-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--nav-border);
+    border-radius: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    z-index: 100;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+ul.social-icons {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 1.2rem;
+}
+
+.social-icons li {
+    display: inline-block;
+}
+
+.social-icon {
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.fa-linkedin:hover {
+    color: #0073a4;
+}
+
+.fa-github:hover {
+    color: #333;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: opacity 0.2s;
+}
+
+.nav-links a:hover {
+    opacity: 0.6;
+}
+
+/* Main Split Layout */
+.split-layout {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1400px;
+    /* Constrain the overall width so they don't stretch too far apart */
+}
+
+.left-column {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    /* Push the graphic towards the center */
+    align-items: center;
+    position: relative;
+    padding: 2rem 10rem 2rem 2rem;
+    /* Add padding on the right to separate from text slightly */
+}
+
+.right-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    /* Keep text aligned to its left edge */
+    padding: 4rem 2rem 4rem 10rem;
+    /* Increased left padding to push text away from the center line */
+}
+
+/* Interactive 3D Sphere */
+.visual-placeholder {
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+
+    /* Default light position */
+    --mouse-x: 30%;
+    --mouse-y: 30%;
+
+    background: radial-gradient(circle at var(--mouse-x) var(--mouse-y),
+            #ffffff 0%,
+            #f4f2ed 20%,
+            #ede8dd 60%,
+            #bdbbb8 100%);
+    box-shadow:
+        10px 20px 40px rgba(41, 41, 41, 0.1),
+        inset -10px -20px 40px rgba(74, 74, 74, 0.15);
+    transition: background 0.1s ease-out;
+}
+
+/* Typography */
+.content-block {
+    max-width: 400px;
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.name {
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.01em;
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive constraints */
+@media (max-width: 900px) {
+    .split-layout {
+        flex-direction: column;
+    }
+
+    .left-column,
+    .right-column {
+        min-height: 50vh;
+        align-items: center;
+        text-align: center;
+    }
+}

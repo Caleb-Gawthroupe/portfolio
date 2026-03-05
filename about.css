@@ -1,0 +1,133 @@
+/* About Page Specific Styles */
+
+.about-container {
+    padding: 10rem 2rem 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.about-grid {
+    display: flex;
+    gap: 4rem;
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+.about-left {
+    flex: 1;
+    position: relative;
+}
+
+.about-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 4rem;
+    font-weight: 300;
+    color: var(--text-primary);
+    position: sticky;
+    top: 10rem;
+    letter-spacing: -0.03em;
+}
+
+.about-right {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.bio-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.bio-text {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    font-weight: 300;
+}
+
+.section-heading {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.01em;
+}
+
+.contact-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.hover-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 400;
+    transition: all 0.2s ease;
+    width: fit-content;
+}
+
+.hover-link i {
+    font-size: 0.9rem;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+}
+
+.hover-link:hover {
+    color: #4C75C2;
+    /* Primary blue accent */
+}
+
+.hover-link:hover i {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.resume-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: var(--text-primary);
+    color: var(--bg-color);
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    border-radius: 40px;
+    font-size: 1.05rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.resume-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Base link active styling inherited, but let's reinforce it for about page just in case */
+.active-link {
+    font-weight: 700 !important;
+    color: var(--text-primary);
+}
+
+/* Responsive constraints */
+@media (max-width: 900px) {
+    .about-grid {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .about-title {
+        position: static;
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+}

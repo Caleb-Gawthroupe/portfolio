@@ -1,0 +1,195 @@
+/* Projects Page Specific Styles */
+
+.projects-container {
+    padding: 8rem 2rem 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.projects-header {
+    margin-bottom: 4rem;
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+.page-title {
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    font-size: 3rem;
+    font-weight: 300;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+}
+
+.page-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    font-weight: 300;
+}
+
+.active-link {
+    font-weight: 700 !important;
+    color: var(--text-primary);
+}
+
+/* Projects Grid Layout */
+.projects-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+}
+
+.project-item {
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideUp 0.8s ease-out forwards;
+}
+
+/* Staggered animation delays for the list */
+.project-item:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.project-item:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.project-item:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.project-img-wrapper {
+    flex: 1.2;
+    display: block;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #eaeaea;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.project-item:hover .project-img-wrapper {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.img.placeholder {
+    width: 100%;
+    padding-bottom: 60%;
+    /* Enforce a 16:9ish aspect ratio */
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.6s ease;
+}
+
+.project-item:hover .img.placeholder {
+    transform: scale(1.03);
+    /* Subtle zoom on hover */
+}
+
+/* Specific Project Image Backgrounds */
+.tailorcv-img {
+    background-image: url('./assets/tailorcv.png');
+}
+
+.streetball-img {
+    background-image: url('./assets/streetball.png');
+}
+
+.worknest-img {
+    background-image: url('./assets/worknest.png');
+}
+
+.project-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.project-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.project-title a {
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.project-title a:hover {
+    color: #4C75C2;
+}
+
+.project-title a i {
+    font-size: 1.2rem;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+}
+
+.project-title a:hover i {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.project-stack {
+    font-size: 0.85rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #4C75C2;
+    /* Subtle structural blue */
+    margin-bottom: 1.5rem;
+}
+
+.project-desc {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    font-weight: 300;
+}
+
+/* Animations */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive constraints */
+@media (max-width: 900px) {
+    .project-item {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .project-item:nth-child(even) {
+        flex-direction: column;
+    }
+
+    .project-img-wrapper {
+        width: 100%;
+    }
+
+    .projects-header {
+        text-align: center;
+    }
+}
