@@ -125,25 +125,11 @@ ul.social-icons {
     /* Increased left padding to push text away from the center line */
 }
 
-/* Interactive 3D Sphere */
-.visual-placeholder {
-    width: 400px;
-    height: 400px;
-    border-radius: 50%;
-
-    /* Default light position */
-    --mouse-x: 30%;
-    --mouse-y: 30%;
-
-    background: radial-gradient(circle at var(--mouse-x) var(--mouse-y),
-            #ffffff 0%,
-            #f4f2ed 20%,
-            #ede8dd 60%,
-            #bdbbb8 100%);
-    box-shadow:
-        10px 20px 40px rgba(41, 41, 41, 0.1),
-        inset -10px -20px 40px rgba(74, 74, 74, 0.15);
-    transition: background 0.1s ease-out;
+/* Interactive Node Network */
+#node-network {
+    width: 500px;
+    height: 500px;
+    display: block;
 }
 
 /* Typography */

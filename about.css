@@ -29,6 +29,12 @@
     letter-spacing: -0.03em;
 }
 
+.about-left .resume-section {
+    margin-top: 2rem;
+    position: sticky;
+    top: 16rem;
+}
+
 .about-right {
     flex: 2;
     display: flex;
