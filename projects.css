@@ -111,6 +111,14 @@
     background-image: url('./assets/worknest.png');
 }
 
+.luca-theory-img {
+    background-image: url('./assets/luca_theory.png');
+}
+
+.catf-img {
+    background-image: url('./assets/catf.png');
+}
+
 .project-info {
     flex: 1;
     display: flex;
